@@ -1,5 +1,6 @@
 ---
 title: 컨슈머 그룹
+aliases: [컨슈머-그룹]
 category: kafka
 tags: [kafka, consumer, consumer-group, partition, scalability]
 sources: [raw/articles/kafka_chapter_4.md]

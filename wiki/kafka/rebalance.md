@@ -1,5 +1,6 @@
 ---
 title: 리밸런스
+aliases: [리밸런스]
 category: kafka
 tags: [kafka, rebalance, consumer-group, partition, cooperative, eager]
 sources: [raw/articles/kafka_chapter_4.md]

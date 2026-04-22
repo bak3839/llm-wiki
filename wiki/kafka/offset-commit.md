@@ -1,5 +1,6 @@
 ---
 title: 오프셋 커밋
+aliases: [오프셋-커밋]
 category: kafka
 tags: [kafka, offset, commit, consumer, auto-commit, commitSync, commitAsync]
 sources: [raw/articles/kafka_chapter_4.md]

@@ -1,5 +1,6 @@
 ---
 title: 컨슈머 설정
+aliases: [컨슈머-설정]
 category: kafka
 tags: [kafka, consumer, configuration, fetch, session, heartbeat, offset, partition-assignment]
 sources: [raw/articles/kafka_chapter_4.md]

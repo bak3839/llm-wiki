@@ -1,5 +1,6 @@
 ---
 title: 폴링 루프
+aliases: [폴링-루프]
 category: kafka
 tags: [kafka, consumer, poll, polling-loop, thread-safety, seek, wakeup]
 sources: [raw/articles/kafka_chapter_4.md]
