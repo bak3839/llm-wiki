@@ -123,6 +123,7 @@ updated: 2026-04-21
 - 컨슈머 위치(AZ 등)를 지정. Kafka 2.4.0+에서 지원
 - 같은 `broker.rack`을 가진 레플리카를 우선 읽어 지연/비용 절감
 - 브로커의 `replica.selector.class=org.apache.kafka.common.replica.RackAwareReplicaSelector` 필요
+- 자세한 내용: [[wiki/kafka/follower-fetch|팔로워-페치]] (KIP-392)
 
 ### `receive.buffer.bytes` / `send.buffer.bytes`
 - 소켓 TCP 버퍼 크기. `-1` = OS 기본값
@@ -144,3 +145,4 @@ updated: 2026-04-21
 - [[리밸런스]] — session.timeout.ms, heartbeat.interval.ms, partition.assignment.strategy
 - [[오프셋-커밋]] — enable.auto.commit, auto.offset.reset
 - [[폴링-루프]] — max.poll.records, max.poll.interval.ms와 poll() 내부 동작
+- [[팔로워-페치]] — client.rack으로 활성화하는 가장 가까운 레플리카 fetch (KIP-392)

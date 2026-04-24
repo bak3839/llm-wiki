@@ -24,3 +24,20 @@
 ## [2026-04-21] lint | index.md·overview.md 링크 명시적 경로로 수정
 - index.md, overview.md의 모든 링크를 [[wiki/<카테고리>/<파일명>|표시명]] 형식으로 변경
 - ingest.md, query.md 스킬에 명시적 경로 링크 규칙 추가
+
+## [2026-04-24] query | 하이 워터마크 이전 메시지만 읽게 하는 이유
+- 답변 저장: 저장 안 함 (wiki/kafka/replication.md에 포함)
+
+## [2026-04-24] query | KRaft 방법 요약
+- 답변 저장: 저장 안 함 (wiki/kafka/controller.md KRaft 섹션에 포함)
+
+## [2026-04-24] query | 컨트롤러 관련 내용 요약
+- 답변 저장: 저장 안 함 (wiki/kafka/controller.md가 이미 완전한 요약)
+
+## [2026-04-24] ingest | [Chapter 6] 카프카 내부 메커니즘
+- 생성: [[wiki/kafka/cluster-membership|클러스터-멤버십]], [[wiki/kafka/controller|컨트롤러]], [[wiki/kafka/replication|복제]], [[wiki/kafka/request-handling|요청-처리]], [[wiki/sources/kafka-chapter-6-internals|kafka-chapter-6]]
+- 업데이트: [[wiki/kafka/follower-fetch|팔로워-페치]] (리더 vs 팔로워 읽기 비교표 추가)
+
+## [2026-04-24] ingest | [KIP-392] 컨슈머가 가장 가까운 레플리카에서 fetch할 수 있도록 허용
+- 생성: [[wiki/kafka/follower-fetch|팔로워-페치]], [[wiki/sources/KIP-392-allow-consumers-to-fetch-from-closest-replica|KIP-392]]
+- 업데이트: [[wiki/kafka/consumer-config|컨슈머-설정]] (client.rack에 follower-fetch 연결)
