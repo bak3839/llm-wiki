@@ -28,6 +28,13 @@
 ## [2026-04-24] query | 하이 워터마크 이전 메시지만 읽게 하는 이유
 - 답변 저장: 저장 안 함 (wiki/kafka/replication.md에 포함)
 
+## [2026-04-25] query | 주키퍼와 KRaft 모드의 차이점 분석
+- 답변 저장: [[wiki/kafka/zookeeper-vs-kraft|ZooKeeper-vs-KRaft]]
+
+## [2026-04-25] ingest | [Chapter 7] 신뢰성 있는 데이터 전달
+- 생성: [[wiki/kafka/reliability|신뢰성]], [[wiki/sources/kafka-chapter-7-reliability|kafka-chapter-7]]
+- 업데이트: [[wiki/kafka/replication|복제]] (ISR 상세 조건, 느린 ISR 영향, zookeeper.session.timeout.ms 설정 추가)
+
 ## [2026-04-24] query | KRaft 방법 요약
 - 답변 저장: 저장 안 함 (wiki/kafka/controller.md KRaft 섹션에 포함)
 

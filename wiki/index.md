@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-04-24 (Chapter 6)_
+_마지막 업데이트: 2026-04-25 (Chapter 7)_
 
 ## DB
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -17,6 +17,8 @@ _마지막 업데이트: 2026-04-24 (Chapter 6)_
 - [[wiki/kafka/controller|컨트롤러]] — 파티션 리더 선출, epoch, 좀비 컨트롤러, KRaft
 - [[wiki/kafka/replication|복제]] — 리더/팔로워 레플리카, ISR, high watermark, 선호 리더
 - [[wiki/kafka/request-handling|요청-처리]] — acceptor/processor/IO 스레드, acks, zero-copy, Fetch Session Cache
+- [[wiki/kafka/zookeeper-vs-kraft|ZooKeeper-vs-KRaft]] — ZooKeeper 방식과 KRaft 방식의 메타데이터 관리·컨트롤러 선출·운영 복잡성 비교
+- [[wiki/kafka/reliability|신뢰성]] — 신뢰성 보장, acks, 복제 팩터 트레이드오프, 언클린 리더 선출, min.insync.replicas, 페이지 캐시
 
 ## Network
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -37,3 +39,4 @@ _마지막 업데이트: 2026-04-24 (Chapter 6)_
 - [[wiki/sources/kafka_chapter_4|kafka_chapter_4]] — [Chapter 4] 카프카 컨슈머: 카프카에서 데이터 읽기
 - [[wiki/sources/KIP-392-allow-consumers-to-fetch-from-closest-replica|KIP-392]] — 컨슈머가 가장 가까운 레플리카에서 fetch할 수 있도록 허용
 - [[wiki/sources/kafka-chapter-6-internals|kafka-chapter-6]] — [Chapter 6] 카프카 내부 메커니즘
+- [[wiki/sources/kafka-chapter-7-reliability|kafka-chapter-7]] — [Chapter 7] 신뢰성 있는 데이터 전달

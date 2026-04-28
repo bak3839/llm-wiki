@@ -2,9 +2,9 @@
 title: 복제
 aliases: [복제]
 category: kafka
-tags: [kafka, replication, ISR, leader-replica, follower-replica, high-watermark, preferred-leader, replica.lag.time.max.ms]
-sources: ["raw/articles/[Chapter 6] 카프카 내부 메커니즘 34a055f5905980f38115c3cb54c9dd73.md"]
-updated: 2026-04-24
+tags: [kafka, replication, ISR, leader-replica, follower-replica, high-watermark, preferred-leader, replica.lag.time.max.ms, out-of-sync]
+sources: ["raw/articles/[Chapter 6] 카프카 내부 메커니즘 34a055f5905980f38115c3cb54c9dd73.md", "raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md"]
+updated: 2026-04-25
 ---
 
 # 복제
@@ -33,13 +33,28 @@ updated: 2026-04-24
 
 메시지가 **모든 ISR에 복제된 시점**이 committed 상태 → 리더의 high watermark 전진.
 
+### ISR 유지 조건 (3가지 모두 충족 필요)
+
+1. **ZooKeeper 하트비트**: 최근 6초 이내(`zookeeper.session.timeout.ms`) ZooKeeper에 하트비트 전송
+2. **리더로부터 읽기**: 최근 10초 이내(`replica.lag.time.max.ms`) 리더로부터 메시지를 읽어옴
+3. **랙 없음**: 최근 10초 이내 리더의 최신 메시지를 완전히 따라잡은 순간이 최소 1회 이상 있어야 함 (읽기 중이어도 계속 뒤처지면 제외)
+
 ### 아웃-오브-싱크 (Out-of-Sync) 판정
 
-팔로워가 `replica.lag.time.max.ms` 시간 동안 다음 중 하나에 해당하면 ISR에서 제외:
-- 읽기 요청을 전혀 보내지 않음
-- 요청을 보냈지만 가장 최근 메시지를 따라잡지 못함
+위 조건 중 하나라도 위반 시 ISR에서 제거됨:
+- ZooKeeper 연결 끊김 (GC pause, 네트워크 단절 등)
+- 새 메시지 읽기 중단
+- 최근 10초 동안 랙이 해소된 적 없음
 
-아웃-오브-싱크 레플리카는 리더 선출 자격을 잃는다.
+아웃-오브-싱크 레플리카는 리더 선출 자격을 잃는다. 이후 ZooKeeper에 재연결하고 리더를 따라잡으면 다시 ISR에 복귀한다.
+
+### 느린 ISR의 영향
+
+동기화가 **느린** ISR (제외되지 않았지만 뒤처진 경우):
+- `acks=all` 프로듀서는 모든 ISR이 메시지를 받을 때까지 대기 → **프로듀서 지연 증가**
+- 컨슈머도 high watermark가 전진하지 않아 함께 느려짐
+
+아웃-오브-싱크로 제외되면 해당 레플리카는 더 이상 기다릴 필요가 없어 성능은 회복되지만, 실질 복제 팩터가 줄어 내구성이 낮아진다.
 
 ## High Watermark
 
@@ -71,11 +86,13 @@ kafka-topics.sh --describe --topic <토픽명>
 
 | 설정 | 위치 | 설명 |
 |------|------|------|
-| `replica.lag.time.max.ms` | 브로커 | 팔로워가 out-of-sync로 판정되는 최대 지연 시간 |
+| `replica.lag.time.max.ms` | 브로커 | 팔로워가 out-of-sync로 판정되는 최대 지연 시간 (기본 30초) |
+| `zookeeper.session.timeout.ms` | 브로커 | ZooKeeper 하트비트 타임아웃. ISR 판정에 영향 (권장: 18초) |
 | `auto.leader.rebalance.enable` | 브로커 | 선호 리더 자동 복구 여부 (기본값: `true`) |
 
 ## 관련 항목
 
+- [[wiki/kafka/reliability|신뢰성]] — 언클린 리더 선출, min.insync.replicas, 복제 팩터 트레이드오프
 - [[wiki/kafka/controller|컨트롤러]] — 파티션 리더 선출 수행
 - [[wiki/kafka/follower-fetch|팔로워-페치]] — 팔로워 레플리카에서 컨슈머가 직접 읽기 (KIP-392)
 - [[wiki/kafka/request-handling|요청-처리]] — high watermark가 읽기 요청 처리에 적용되는 방식
