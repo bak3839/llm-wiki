@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-04-30 (ingest)_
+_마지막 업데이트: 2026-05-02 (query)_
 
 ## DB
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -19,6 +19,8 @@ _마지막 업데이트: 2026-04-30 (ingest)_
 - [[wiki/kafka/request-handling|요청-처리]] — acceptor/processor/IO 스레드, acks, zero-copy, Fetch Session Cache
 - [[wiki/kafka/zookeeper-vs-kraft|ZooKeeper-vs-KRaft]] — ZooKeeper 방식과 KRaft 방식의 메타데이터 관리·컨트롤러 선출·운영 복잡성 비교
 - [[wiki/kafka/reliability|신뢰성]] — 신뢰성 보장, acks, 복제 팩터 트레이드오프, 언클린 리더 선출, min.insync.replicas, 페이지 캐시
+- [[wiki/kafka/kafka-vs-mq|Kafka-vs-MQ]] — Kafka와 전통적 메시지 큐(RabbitMQ 등) 설계 철학·기능 비교
+- [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]] — 컨슈머 사망 감지, 리밸런스, 재기동 시 오프셋 처리 흐름
 ## Network
 <!-- 페이지 추가 시 여기에 기록 -->
 

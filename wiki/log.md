@@ -39,6 +39,18 @@
 - 생성: [[wiki/spring/transactional-event-listener|@TransactionalEventListener]], [[wiki/sources/spring-transactional-event-listener|spring-transactional-event-listener]]
 - 업데이트: (없음)
 
+## [2026-04-30] query | kafka와 다른 메시지 큐의 차이점
+- 답변 저장: [[wiki/kafka/kafka-vs-mq|Kafka-vs-MQ]]
+
+## [2026-05-01] query | 자동 오프셋 커밋을 사용하면 발생할 수 있는 문제
+- 답변 저장: 저장 안 함 (wiki/kafka/offset-commit.md에 이미 정리됨)
+
+## [2026-05-02] query | 컨슈머 사망 후 리밸런스 및 재기동 흐름
+- 답변 저장: [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]]
+
+## [2026-05-02] query | 컨슈머 fetch 용량/개수 관련 설정값
+- 답변 저장: 저장 안 함 (wiki/kafka/consumer-config.md에 이미 정리됨)
+
 ## [2026-04-24] query | KRaft 방법 요약
 - 답변 저장: 저장 안 함 (wiki/kafka/controller.md KRaft 섹션에 포함)
 
