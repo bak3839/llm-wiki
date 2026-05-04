@@ -35,6 +35,10 @@
 - 생성: [[wiki/kafka/reliability|신뢰성]], [[wiki/sources/kafka-chapter-7-reliability|kafka-chapter-7]]
 - 업데이트: [[wiki/kafka/replication|복제]] (ISR 상세 조건, 느린 ISR 영향, zookeeper.session.timeout.ms 설정 추가)
 
+## [2026-04-30] ingest | Spring @TransactionalEventListener 공식 문서
+- 생성: [[wiki/spring/transactional-event-listener|@TransactionalEventListener]], [[wiki/sources/spring-transactional-event-listener|spring-transactional-event-listener]]
+- 업데이트: (없음)
+
 ## [2026-04-24] query | KRaft 방법 요약
 - 답변 저장: 저장 안 함 (wiki/kafka/controller.md KRaft 섹션에 포함)
 

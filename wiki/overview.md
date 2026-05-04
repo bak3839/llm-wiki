@@ -1,6 +1,6 @@
 # Wiki Overview
 
-_마지막 업데이트: 2026-04-25 (Chapter 7)_
+_마지막 업데이트: 2026-04-30 (ingest)_
 
 ## 현황
 
@@ -12,8 +12,8 @@ _마지막 업데이트: 2026-04-25 (Chapter 7)_
 | OS | 0 | 0 |
 | Distributed | 0 | 0 |
 | Patterns | 0 | 0 |
-| Spring | 0 | 0 |
-| **합계** | **13** | **4** |
+| Spring | 1 | 2 |
+| **합계** | **14** | **6** |
 
 ## 최근 추가 항목
 
@@ -23,6 +23,7 @@ _마지막 업데이트: 2026-04-25 (Chapter 7)_
 - 2026-04-24: [[wiki/kafka/cluster-membership|클러스터-멤버십]], [[wiki/kafka/controller|컨트롤러]], [[wiki/kafka/replication|복제]], [[wiki/kafka/request-handling|요청-처리]] (kafka) — Chapter 6 ingest
 - 2026-04-25: [[wiki/kafka/zookeeper-vs-kraft|ZooKeeper-vs-KRaft]] (kafka) — query 파생 페이지
 - 2026-04-25: [[wiki/kafka/reliability|신뢰성]] (kafka) — Chapter 7 ingest
+- 2026-04-30: [[wiki/spring/transactional-event-listener|@TransactionalEventListener]] (spring) — Spring 공식 문서 ingest
 
 ## 주요 개념
 

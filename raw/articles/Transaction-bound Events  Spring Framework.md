@@ -1,0 +1,37 @@
+---
+title: "Transaction-bound Events :: Spring Framework"
+source: "https://docs.spring.io/spring-framework/reference/data-access/transaction/event.html"
+author:
+published:
+created: 2026-04-30
+description:
+tags:
+  - "clippings"
+---
+## Transaction-bound Events
+
+As of Spring 4.2, the listener of an event can be bound to a phase of the transaction. The typical example is to handle the event when the transaction has completed successfully. Doing so lets events be used with more flexibility when the outcome of the current transaction actually matters to the listener.
+
+You can register a regular event listener by using the `@EventListener` annotation. If you need to bind it to the transaction, use `@TransactionalEventListener`. When you do so, the listener is bound to the commit phase of the transaction by default.
+
+The next example shows this concept. Assume that a component publishes an order-created event and that we want to define a listener that should only handle that event once the transaction in which it has been published has committed successfully. The following example sets up such an event listener:
+
+- Java
+- Kotlin
+
+```java
+@Component
+public class MyComponent {
+
+    @TransactionalEventListener
+    public void handleOrderCreatedEvent(CreationEvent<Order> creationEvent) {
+        // ...
+    }
+}
+```
+
+The `@TransactionalEventListener` annotation exposes a `phase` attribute that lets you customize the phase of the transaction to which the listener should be bound. The valid phases are `BEFORE_COMMIT`, `AFTER_COMMIT` (default), `AFTER_ROLLBACK`, as well as `AFTER_COMPLETION` which aggregates the transaction completion (be it a commit or a rollback).
+
+If no transaction is running, the listener is not invoked at all, since we cannot honor the required semantics. You can, however, override that behavior by setting the `fallbackExecution` attribute of the annotation to `true`.
+
+As of 6.1, `@TransactionalEventListener` can work with thread-bound transactions managed by `PlatformTransactionManager` as well as reactive transactions managed by `ReactiveTransactionManager`. For the former, listeners are guaranteed to see the current thread-bound transaction. Since the latter uses the Reactor context instead of thread-local variables, the transaction context needs to be included in the published event instance as the event source. See the [`TransactionalEventPublisher`](https://docs.spring.io/spring-framework/docs/7.0.7/javadoc-api/org/springframework/transaction/reactive/TransactionalEventPublisher.html) javadoc for details.
