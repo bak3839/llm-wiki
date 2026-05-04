@@ -2,9 +2,9 @@
 title: 신뢰성 있는 데이터 전달
 aliases: [신뢰성]
 category: kafka
-tags: [kafka, reliability, replication-factor, unclean-leader-election, min-insync-replicas, acks, page-cache, flush]
-sources: ["raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md"]
-updated: 2026-04-25
+tags: [kafka, reliability, replication-factor, unclean-leader-election, min-insync-replicas, acks, page-cache, flush, monitoring, consumer-lag]
+sources: ["raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md", "raw/articles/Chapter 7 신뢰성 있는 데이터 전달2.md"]
+updated: 2026-05-05
 ---
 
 # 신뢰성 있는 데이터 전달
@@ -84,8 +84,40 @@ updated: 2026-04-25
 
 > 소규모 batch에서 매 메시지 fsync는 기본 설정 대비 처리량을 약 3~5배 낮춘다.
 
+## 시스템 신뢰성 검증
+
+### 설정 검증
+
+`org.apache.kafka.tools` 패키지의 두 CLI 도구를 활용한다:
+
+| 도구 | 역할 |
+|------|------|
+| `VerifiableProducer` | 순번 메시지를 전송하며 성공/에러 출력 |
+| `VerifiableConsumer` | 수신 순서, 커밋, 리밸런스 정보 출력 |
+
+권장 테스트 시나리오: 리더 선출, 컨트롤러 선출, 롤링 재시작, 언클린 리더 선출.
+
+### 프로덕션 모니터링
+
+**프로듀서 핵심 지표 (JMX)**
+- 레코드별 에러율 (`error-rate`)
+- 재시도율 (`record-retry-rate`)
+- 재시도 횟수 소진 이벤트 → `delivery.timeout.ms`, `retries` 설정 확인 필요
+
+**컨슈머 핵심 지표: consumer lag**
+- 컨슈머가 파티션의 최신 커밋 메시지에서 얼마나 뒤떨어져 있는지
+- 이상적으로는 0, 현실에서는 poll 주기로 인해 오르락내리락
+- 중요한 것은 컨슈머가 계속 따라붙는지 여부
+- **Burrow** (LinkedIn 개발 오픈소스): consumer lag 추세 분석에 유용
+
+**브로커 에러 응답 JMX 지표**
+- `kafka.server:type=BrokerTopicMetrics,name=FailedProduceRequestsPerSec`
+- `kafka.server:type=BrokerTopicMetrics,name=FailedFetchRequestsPerSec`
+
 ## 관련 항목
 
+- [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] — acks 상세, 재시도, 멱등성, 에러 핸들링
 - [[wiki/kafka/replication|복제]] — ISR, high watermark, 선호 리더, out-of-sync 판정 상세
 - [[wiki/kafka/request-handling|요청-처리]] — acks 처리, Purgatory, 쓰기 요청 흐름
 - [[wiki/kafka/controller|컨트롤러]] — 파티션 리더 선출 메커니즘
+- [[wiki/kafka/offset-commit|오프셋-커밋]] — 컨슈머 측 신뢰성 실천 사항

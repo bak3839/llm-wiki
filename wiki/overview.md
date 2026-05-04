@@ -1,19 +1,19 @@
 # Wiki Overview
 
-_마지막 업데이트: 2026-05-02 (query)_
+_마지막 업데이트: 2026-05-05 (Chapter 7-2)_
 
 ## 현황
 
 | 카테고리 | 페이지 수 | 소스 수 |
 |----------|-----------|---------|
 | DB | 0 | 0 |
-| Kafka | 15 | 4 |
+| Kafka | 16 | 5 |
 | Network | 0 | 0 |
 | OS | 0 | 0 |
 | Distributed | 0 | 0 |
 | Patterns | 0 | 0 |
 | Spring | 1 | 2 |
-| **합계** | **16** | **6** |
+| **합계** | **17** | **7** |
 
 ## 최근 추가 항목
 
@@ -26,6 +26,7 @@ _마지막 업데이트: 2026-05-02 (query)_
 - 2026-04-30: [[wiki/spring/transactional-event-listener|@TransactionalEventListener]] (spring) — Spring 공식 문서 ingest
 - 2026-04-30: [[wiki/kafka/kafka-vs-mq|Kafka-vs-MQ]] (kafka) — query 파생 페이지
 - 2026-05-02: [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]] (kafka) — query 파생 페이지
+- 2026-05-05: [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] (kafka) — Chapter 7-2 ingest
 
 ## 주요 개념
 

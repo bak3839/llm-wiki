@@ -2,9 +2,9 @@
 title: 오프셋 커밋
 aliases: [오프셋-커밋]
 category: kafka
-tags: [kafka, offset, commit, consumer, auto-commit, commitSync, commitAsync]
-sources: [raw/articles/kafka_chapter_4.md]
-updated: 2026-04-21
+tags: [kafka, offset, commit, consumer, auto-commit, commitSync, commitAsync, retry, DLQ, stateful-consumer]
+sources: [raw/articles/kafka_chapter_4.md, "raw/articles/Chapter 7 신뢰성 있는 데이터 전달2.md"]
+updated: 2026-05-05
 ---
 
 # 오프셋 커밋
@@ -107,8 +107,58 @@ for (ConsumerRecord<String, String> record : records) {
 | 처리 → 커밋 | 처리 성공 후 커밋 예외 발생 시 **중복 가능** |
 | 커밋 → 처리 | 커밋 성공 후 처리 예외 발생 시 **누락 가능** |
 
+## 커밋 빈도 트레이드오프
+
+오프셋 커밋은 `acks=all`과 유사한 오버헤드를 수반한다 (특정 컨슈머 그룹의 모든 커밋이 동일 브로커로 향하기 때문). 커밋 주기는 성능과 중복 발생 범위 사이의 균형이다:
+
+| 커밋 빈도 | 효과 |
+|----------|------|
+| 자주 커밋 | 장애 후 중복 처리 메시지 수 감소, 처리량 저하 가능 |
+| 드물게 커밋 | 처리량 향상, 크래시 시 재처리 메시지 수 증가 |
+
+메시지마다 커밋하는 방식은 매우 낮은 빈도로 메시지가 들어오는 토픽에만 적합하다.
+
+## 컨슈머 재시도 패턴
+
+일부 레코드 처리에 실패하고 나중에 재시도해야 할 때, 다음 중 하나를 선택한다:
+
+### 패턴 1: pause() + 버퍼
+
+```java
+// 실패한 레코드를 버퍼에 저장
+retryBuffer.add(failedRecord);
+
+// 마지막 성공 오프셋 커밋
+consumer.commitSync(successOffsets);
+
+// 추가 poll()이 데이터를 반환하지 않도록 일시 중단
+consumer.pause(assignedPartitions);
+
+// 버퍼의 레코드 재처리 후 resume()
+consumer.resume(assignedPartitions);
+```
+
+- 레코드 #30 실패, #31 성공 시 #31의 오프셋을 커밋하면 안 됨 (#30까지 처리 완료로 표시되기 때문)
+
+### 패턴 2: 재시도 토픽 (Dead Letter Queue)
+
+- 처리 실패한 레코드를 별도 재시도 토픽에 전송 후 계속 진행
+- 별도 컨슈머 그룹으로 재시도 토픽을 소비하거나, 주 토픽과 재시도 토픽을 함께 구독하며 재시도 사이에 재시도 토픽 구독을 일시 중단
+
+## 상태 유지 컨슈머
+
+`poll()` 호출 간에 상태(이동평균 등)를 유지해야 할 경우:
+
+```
+오프셋 커밋 시 → 누적된 상태값도 results 토픽에 기록
+재시작 시 → results 토픽에서 마지막 상태값 복구 → 오프셋부터 읽기 재개
+```
+
+단순히 오프셋부터 읽기 재개만으로는 상태를 복구할 수 없기 때문이다.
+
 ## 관련 항목
 
-- [[리밸런스]] — 리밸런스 전 오프셋 커밋 필요
-- [[컨슈머-설정]] — enable.auto.commit, auto.offset.reset, offsets.retention.minutes
-- [[폴링-루프]] — poll() 내부에서의 오프셋 처리
+- [[wiki/kafka/rebalance|리밸런스]] — 리밸런스 전 오프셋 커밋 필요
+- [[wiki/kafka/consumer-config|컨슈머-설정]] — enable.auto.commit, auto.offset.reset, offsets.retention.minutes
+- [[wiki/kafka/poll-loop|폴링-루프]] — poll() 내부에서의 오프셋 처리
+- [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] — 프로듀서 측 at-least-once vs exactly-once

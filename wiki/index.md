@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-02 (query)_
+_마지막 업데이트: 2026-05-05 (Chapter 7-2)_
 
 ## DB
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -21,6 +21,8 @@ _마지막 업데이트: 2026-05-02 (query)_
 - [[wiki/kafka/reliability|신뢰성]] — 신뢰성 보장, acks, 복제 팩터 트레이드오프, 언클린 리더 선출, min.insync.replicas, 페이지 캐시
 - [[wiki/kafka/kafka-vs-mq|Kafka-vs-MQ]] — Kafka와 전통적 메시지 큐(RabbitMQ 등) 설계 철학·기능 비교
 - [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]] — 컨슈머 사망 감지, 리밸런스, 재기동 시 오프셋 처리 흐름
+- [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] — acks 0/1/all 상세, delivery.timeout.ms, enable.idempotence, 에러 유형 및 처리
+
 ## Network
 <!-- 페이지 추가 시 여기에 기록 -->
 
@@ -42,3 +44,4 @@ _마지막 업데이트: 2026-05-02 (query)_
 - [[wiki/sources/kafka-chapter-6-internals|kafka-chapter-6]] — [Chapter 6] 카프카 내부 메커니즘
 - [[wiki/sources/kafka-chapter-7-reliability|kafka-chapter-7]] — [Chapter 7] 신뢰성 있는 데이터 전달
 - [[wiki/sources/spring-transactional-event-listener|spring-transactional-event-listener]] — Spring @TransactionalEventListener 공식 문서
+- [[wiki/sources/kafka-chapter-7-reliability-2|kafka-chapter-7-2]] — [Chapter 7] 신뢰성 있는 데이터 전달 (2부: 프로듀서/컨슈머 실천 사항, 검증·모니터링)

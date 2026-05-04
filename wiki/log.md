@@ -51,6 +51,10 @@
 ## [2026-05-02] query | 컨슈머 fetch 용량/개수 관련 설정값
 - 답변 저장: 저장 안 함 (wiki/kafka/consumer-config.md에 이미 정리됨)
 
+## [2026-05-05] ingest | [Chapter 7] 신뢰성 있는 데이터 전달 (2부)
+- 생성: [[wiki/kafka/producer-reliability|프로듀서-신뢰성]], [[wiki/sources/kafka-chapter-7-reliability-2|kafka-chapter-7-2]]
+- 업데이트: [[wiki/kafka/offset-commit|오프셋-커밋]] (컨슈머 재시도 패턴, 상태 유지 컨슈머, 커밋 빈도 트레이드오프), [[wiki/kafka/reliability|신뢰성]] (시스템 검증·모니터링 섹션 추가)
+
 ## [2026-04-24] query | KRaft 방법 요약
 - 답변 저장: 저장 안 함 (wiki/kafka/controller.md KRaft 섹션에 포함)
 
