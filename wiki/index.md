@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-05 (Chapter 7-2)_
+_마지막 업데이트: 2026-05-05 (query)_
 
 ## DB
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -22,6 +22,7 @@ _마지막 업데이트: 2026-05-05 (Chapter 7-2)_
 - [[wiki/kafka/kafka-vs-mq|Kafka-vs-MQ]] — Kafka와 전통적 메시지 큐(RabbitMQ 등) 설계 철학·기능 비교
 - [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]] — 컨슈머 사망 감지, 리밸런스, 재기동 시 오프셋 처리 흐름
 - [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] — acks 0/1/all 상세, delivery.timeout.ms, enable.idempotence, 에러 유형 및 처리
+- [[wiki/kafka/producer-partitioning|프로듀서-파티셔닝]] — 특정 파티션 지정, 키 해시, 커스텀 파티셔너, Sticky Partitioner
 
 ## Network
 <!-- 페이지 추가 시 여기에 기록 -->
