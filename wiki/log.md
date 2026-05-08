@@ -71,3 +71,7 @@
 ## [2026-04-24] ingest | [KIP-392] 컨슈머가 가장 가까운 레플리카에서 fetch할 수 있도록 허용
 - 생성: [[wiki/kafka/follower-fetch|팔로워-페치]], [[wiki/sources/KIP-392-allow-consumers-to-fetch-from-closest-replica|KIP-392]]
 - 업데이트: [[wiki/kafka/consumer-config|컨슈머-설정]] (client.rack에 follower-fetch 연결)
+
+## [2026-05-08] ingest | [Chapter 8] 정확히 한 번 의미 구조
+- 생성: [[wiki/kafka/idempotent-producer|멱등적-프로듀서]], [[wiki/kafka/kafka-transactions|카프카-트랜잭션]], [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]]
+- 업데이트: [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] (멱등성 프로듀서 한계 및 트랜잭션 링크 추가)

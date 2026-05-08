@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-05 (query)_
+_마지막 업데이트: 2026-05-08 (Chapter 8 ingest)_
 
 ## DB
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -23,6 +23,8 @@ _마지막 업데이트: 2026-05-05 (query)_
 - [[wiki/kafka/consumer-failure-and-recovery|컨슈머-장애-복구]] — 컨슈머 사망 감지, 리밸런스, 재기동 시 오프셋 처리 흐름
 - [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] — acks 0/1/all 상세, delivery.timeout.ms, enable.idempotence, 에러 유형 및 처리
 - [[wiki/kafka/producer-partitioning|프로듀서-파티셔닝]] — 특정 파티션 지정, 키 해시, 커스텀 파티셔너, Sticky Partitioner
+- [[wiki/kafka/idempotent-producer|멱등적-프로듀서]] — 프로듀서ID·시퀀스 넘버로 재시도 중복 방지, 한계와 장애 시나리오
+- [[wiki/kafka/kafka-transactions|카프카-트랜잭션]] — 원자적 다수 파티션 쓰기, 좀비 펜싱, EOS, isolation.level
 
 ## Network
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -46,3 +48,4 @@ _마지막 업데이트: 2026-05-05 (query)_
 - [[wiki/sources/kafka-chapter-7-reliability|kafka-chapter-7]] — [Chapter 7] 신뢰성 있는 데이터 전달
 - [[wiki/sources/spring-transactional-event-listener|spring-transactional-event-listener]] — Spring @TransactionalEventListener 공식 문서
 - [[wiki/sources/kafka-chapter-7-reliability-2|kafka-chapter-7-2]] — [Chapter 7] 신뢰성 있는 데이터 전달 (2부: 프로듀서/컨슈머 실천 사항, 검증·모니터링)
+- [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]] — [Chapter 8] 정확히 한 번 의미 구조 (멱등적 프로듀서, 트랜잭션, EOS)
