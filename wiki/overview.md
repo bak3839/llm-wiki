@@ -1,19 +1,19 @@
 # Wiki Overview
 
-_마지막 업데이트: 2026-05-08 (Chapter 8)_
+_마지막 업데이트: 2026-05-14 (InnoDB Locking ingest)_
 
 ## 현황
 
 | 카테고리 | 페이지 수 | 소스 수 |
 |----------|-----------|---------|
-| DB | 0 | 0 |
+| DB | 1 | 1 |
 | Kafka | 19 | 6 |
 | Network | 0 | 0 |
 | OS | 0 | 0 |
 | Distributed | 0 | 0 |
 | Patterns | 0 | 0 |
 | Spring | 1 | 2 |
-| **합계** | **20** | **8** |
+| **합계** | **21** | **9** |
 
 ## 최근 추가 항목
 
@@ -29,6 +29,7 @@ _마지막 업데이트: 2026-05-08 (Chapter 8)_
 - 2026-05-05: [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] (kafka) — Chapter 7-2 ingest
 - 2026-05-05: [[wiki/kafka/producer-partitioning|프로듀서-파티셔닝]] (kafka) — query 파생 페이지
 - 2026-05-08: [[wiki/kafka/idempotent-producer|멱등적-프로듀서]], [[wiki/kafka/kafka-transactions|카프카-트랜잭션]] (kafka) — Chapter 8 ingest
+- 2026-05-14: [[wiki/db/innodb-locking|InnoDB-락-유형]] (db) — MySQL 8.4 InnoDB Locking ingest
 
 ## 주요 개념
 

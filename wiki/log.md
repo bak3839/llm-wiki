@@ -75,3 +75,7 @@
 ## [2026-05-08] ingest | [Chapter 8] 정확히 한 번 의미 구조
 - 생성: [[wiki/kafka/idempotent-producer|멱등적-프로듀서]], [[wiki/kafka/kafka-transactions|카프카-트랜잭션]], [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]]
 - 업데이트: [[wiki/kafka/producer-reliability|프로듀서-신뢰성]] (멱등성 프로듀서 한계 및 트랜잭션 링크 추가)
+
+## [2026-05-14] ingest | MySQL 8.4 Reference Manual — 17.7.1 InnoDB Locking
+- 생성: [[wiki/db/innodb-locking|InnoDB-락-유형]], [[wiki/sources/innodb-locking|innodb-locking]]
+- 업데이트: (없음)

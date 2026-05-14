@@ -1,9 +1,9 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-08 (Chapter 8 ingest)_
+_마지막 업데이트: 2026-05-14 (InnoDB Locking ingest)_
 
 ## DB
-<!-- 페이지 추가 시 여기에 기록 -->
+- [[wiki/db/innodb-locking|InnoDB-락-유형]] — S/X·인텐션·레코드·갭·넥스트키·인서트인텐션·AUTO-INC 락 총정리
 
 ## Kafka
 - [[wiki/kafka/consumer-group|컨슈머-그룹]] — 동일 토픽을 파티션 단위로 분산 소비하는 컨슈머 그룹 개념
@@ -49,3 +49,4 @@ _마지막 업데이트: 2026-05-08 (Chapter 8 ingest)_
 - [[wiki/sources/spring-transactional-event-listener|spring-transactional-event-listener]] — Spring @TransactionalEventListener 공식 문서
 - [[wiki/sources/kafka-chapter-7-reliability-2|kafka-chapter-7-2]] — [Chapter 7] 신뢰성 있는 데이터 전달 (2부: 프로듀서/컨슈머 실천 사항, 검증·모니터링)
 - [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]] — [Chapter 8] 정확히 한 번 의미 구조 (멱등적 프로듀서, 트랜잭션, EOS)
+- [[wiki/sources/innodb-locking|innodb-locking]] — MySQL 8.4 InnoDB Locking 공식 레퍼런스
