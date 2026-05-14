@@ -1,10 +1,11 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-14 (Transaction Isolation Levels ingest)_
+_마지막 업데이트: 2026-05-14 (REPEATABLE READ 잠금 읽기 팬텀 리드 query)_
 
 ## DB
 - [[wiki/db/innodb-locking|InnoDB-락-유형]] — S/X·인텐션·레코드·갭·넥스트키·인서트인텐션·AUTO-INC 락 총정리
 - [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]] — READ UNCOMMITTED/COMMITTED/REPEATABLE READ/SERIALIZABLE 비교, semi-consistent read
+- [[wiki/db/repeatable-read-phantom-locking-reads|REPEATABLE-READ-팬텀-잠금읽기]] — 잠금 읽기(FOR UPDATE/FOR SHARE)가 MVCC 스냅샷을 우회해 팬텀 리드를 유발하는 이유
 
 ## Kafka
 - [[wiki/kafka/consumer-group|컨슈머-그룹]] — 동일 토픽을 파티션 단위로 분산 소비하는 컨슈머 그룹 개념

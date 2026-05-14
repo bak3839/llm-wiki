@@ -83,3 +83,12 @@
 ## [2026-05-14] ingest | MySQL 8.4 Reference Manual — 17.7.2.1 Transaction Isolation Levels
 - 생성: [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]], [[wiki/sources/innodb-transaction-isolation-levels|innodb-isolation-levels]]
 - 업데이트: [[wiki/db/innodb-locking|InnoDB-락-유형]] (트랜잭션-격리-수준 관련 항목 링크 추가)
+
+## [2026-05-14] lint | 이슈 10건
+- 고아 페이지 4개, 크로스레퍼런스 누락 4개, frontmatter 오류 2개, 모순 0건, index 누락 0개, 오래된 내용 0개
+
+## [2026-05-14] query | REPEATABLE READ 잠금 읽기의 팬텀 리드 원인
+- 답변 저장: [[wiki/db/repeatable-read-phantom-locking-reads|REPEATABLE-READ-팬텀-잠금읽기]]
+
+## [2026-05-14] query | InnoDB REPEATABLE READ에서 팬텀 리드가 발생하지 않는 이유
+- 답변 저장: 저장 안 함 (wiki/db/innodb-locking.md, wiki/db/transaction-isolation-levels.md에 이미 정리됨)
