@@ -168,4 +168,5 @@ lock_mode X
 
 ## 관련 항목
 
+- [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]] — 격리 수준별 갭 락·넥스트키 락 동작 차이
 - [[wiki/kafka/kafka-transactions|카프카-트랜잭션]] — 카프카에서의 원자성 보장 (비교 참고)

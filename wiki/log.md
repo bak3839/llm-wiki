@@ -79,3 +79,7 @@
 ## [2026-05-14] ingest | MySQL 8.4 Reference Manual — 17.7.1 InnoDB Locking
 - 생성: [[wiki/db/innodb-locking|InnoDB-락-유형]], [[wiki/sources/innodb-locking|innodb-locking]]
 - 업데이트: (없음)
+
+## [2026-05-14] ingest | MySQL 8.4 Reference Manual — 17.7.2.1 Transaction Isolation Levels
+- 생성: [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]], [[wiki/sources/innodb-transaction-isolation-levels|innodb-isolation-levels]]
+- 업데이트: [[wiki/db/innodb-locking|InnoDB-락-유형]] (트랜잭션-격리-수준 관련 항목 링크 추가)

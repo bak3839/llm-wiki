@@ -1,9 +1,10 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-14 (InnoDB Locking ingest)_
+_마지막 업데이트: 2026-05-14 (Transaction Isolation Levels ingest)_
 
 ## DB
 - [[wiki/db/innodb-locking|InnoDB-락-유형]] — S/X·인텐션·레코드·갭·넥스트키·인서트인텐션·AUTO-INC 락 총정리
+- [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]] — READ UNCOMMITTED/COMMITTED/REPEATABLE READ/SERIALIZABLE 비교, semi-consistent read
 
 ## Kafka
 - [[wiki/kafka/consumer-group|컨슈머-그룹]] — 동일 토픽을 파티션 단위로 분산 소비하는 컨슈머 그룹 개념
@@ -50,3 +51,4 @@ _마지막 업데이트: 2026-05-14 (InnoDB Locking ingest)_
 - [[wiki/sources/kafka-chapter-7-reliability-2|kafka-chapter-7-2]] — [Chapter 7] 신뢰성 있는 데이터 전달 (2부: 프로듀서/컨슈머 실천 사항, 검증·모니터링)
 - [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]] — [Chapter 8] 정확히 한 번 의미 구조 (멱등적 프로듀서, 트랜잭션, EOS)
 - [[wiki/sources/innodb-locking|innodb-locking]] — MySQL 8.4 InnoDB Locking 공식 레퍼런스
+- [[wiki/sources/innodb-transaction-isolation-levels|innodb-isolation-levels]] — MySQL 8.4 InnoDB Transaction Isolation Levels 공식 레퍼런스
