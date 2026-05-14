@@ -3,7 +3,7 @@ title: 복제
 aliases: [복제]
 category: kafka
 tags: [kafka, replication, ISR, leader-replica, follower-replica, high-watermark, preferred-leader, replica.lag.time.max.ms, out-of-sync]
-sources: ["raw/articles/[Chapter 6] 카프카 내부 메커니즘 34a055f5905980f38115c3cb54c9dd73.md", "raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md"]
+sources: ["raw/articles/[Chapter 6] 카프카 내부 메커니즘 34a055f5905980f38115c3cb54c9dd73.md", "raw/articles/Chapter 7 신뢰성 있는 데이터 전달.md"]
 updated: 2026-04-25
 ---
 

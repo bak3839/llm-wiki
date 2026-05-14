@@ -2,7 +2,7 @@
 title: "[Chapter 7] 신뢰성 있는 데이터 전달"
 category: source
 tags: [kafka, reliability, replication-factor, unclean-leader-election, min-insync-replicas, ISR, acks, page-cache]
-sources: ["raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md"]
+sources: ["raw/articles/Chapter 7 신뢰성 있는 데이터 전달.md"]
 updated: 2026-04-25
 ---
 
@@ -10,7 +10,7 @@ updated: 2026-04-25
 
 ## 출처
 
-`raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md`
+`raw/articles/Chapter 7 신뢰성 있는 데이터 전달.md`
 
 ## 핵심 요약
 

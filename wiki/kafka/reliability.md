@@ -3,7 +3,7 @@ title: 신뢰성 있는 데이터 전달
 aliases: [신뢰성]
 category: kafka
 tags: [kafka, reliability, replication-factor, unclean-leader-election, min-insync-replicas, acks, page-cache, flush, monitoring, consumer-lag]
-sources: ["raw/articles/[Chapter 7] 신뢰성 있는 데이터 전달.md", "raw/articles/Chapter 7 신뢰성 있는 데이터 전달2.md"]
+sources: ["raw/articles/Chapter 7 신뢰성 있는 데이터 전달.md", "raw/articles/Chapter 7 신뢰성 있는 데이터 전달2.md"]
 updated: 2026-05-05
 ---
 
