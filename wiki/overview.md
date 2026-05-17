@@ -6,14 +6,14 @@ _마지막 업데이트: 2026-05-17 (Distributed Locks with Redis ingest)_
 
 | 카테고리 | 페이지 수 | 소스 수 |
 |----------|-----------|---------|
-| DB | 3 | 2 |
+| DB | 4 | 2 |
 | Kafka | 19 | 6 |
 | Network | 0 | 0 |
 | OS | 0 | 0 |
 | Distributed | 1 | 1 |
 | Patterns | 0 | 0 |
 | Spring | 1 | 2 |
-| **합계** | **24** | **11** |
+| **합계** | **25** | **11** |
 
 ## 최근 추가 항목
 
@@ -32,6 +32,7 @@ _마지막 업데이트: 2026-05-17 (Distributed Locks with Redis ingest)_
 - 2026-05-14: [[wiki/db/innodb-locking|InnoDB-락-유형]] (db) — MySQL 8.4 InnoDB Locking ingest
 - 2026-05-14: [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]] (db) — MySQL 8.4 InnoDB Transaction Isolation Levels ingest
 - 2026-05-14: [[wiki/db/repeatable-read-phantom-locking-reads|REPEATABLE-READ-팬텀-잠금읽기]] (db) — query 파생 페이지
+- 2026-05-16: [[wiki/db/mysql-default-isolation-level|MySQL-기본-격리수준]] (db) — query 파생 페이지
 - 2026-05-17: [[wiki/distributed/redis-distributed-lock|Redis-분산-락]] (distributed) — Distributed Locks with Redis ingest
 
 ## 주요 개념

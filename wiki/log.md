@@ -93,6 +93,9 @@
 ## [2026-05-14] query | InnoDB REPEATABLE READ에서 팬텀 리드가 발생하지 않는 이유
 - 답변 저장: 저장 안 함 (wiki/db/innodb-locking.md, wiki/db/transaction-isolation-levels.md에 이미 정리됨)
 
+## [2026-05-16] query | MySQL 기본 격리 수준이 REPEATABLE READ인 이유
+- 답변 저장: [[wiki/db/mysql-default-isolation-level|MySQL-기본-격리수준]]
+
 ## [2026-05-17] ingest | Distributed Locks with Redis
 - 생성: [[wiki/distributed/redis-distributed-lock|Redis-분산-락]], [[wiki/sources/distributed-locks-with-redis|distributed-locks-with-redis]]
 - 업데이트: (없음)

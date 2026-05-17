@@ -6,6 +6,7 @@ _마지막 업데이트: 2026-05-17 (Distributed Locks with Redis ingest)_
 - [[wiki/db/innodb-locking|InnoDB-락-유형]] — S/X·인텐션·레코드·갭·넥스트키·인서트인텐션·AUTO-INC 락 총정리
 - [[wiki/db/transaction-isolation-levels|트랜잭션-격리-수준]] — READ UNCOMMITTED/COMMITTED/REPEATABLE READ/SERIALIZABLE 비교, semi-consistent read
 - [[wiki/db/repeatable-read-phantom-locking-reads|REPEATABLE-READ-팬텀-잠금읽기]] — 잠금 읽기(FOR UPDATE/FOR SHARE)가 MVCC 스냅샷을 우회해 팬텀 리드를 유발하는 이유
+- [[wiki/db/mysql-default-isolation-level|MySQL-기본-격리수준]] — 기본값이 REPEATABLE READ인 이유: SBR 복제 일관성과 동시성의 균형
 
 ## Kafka
 - [[wiki/kafka/consumer-group|컨슈머-그룹]] — 동일 토픽을 파티션 단위로 분산 소비하는 컨슈머 그룹 개념
