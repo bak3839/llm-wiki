@@ -1,6 +1,6 @@
 # Wiki Index
 
-_마지막 업데이트: 2026-05-14 (REPEATABLE READ 잠금 읽기 팬텀 리드 query)_
+_마지막 업데이트: 2026-05-17 (Distributed Locks with Redis ingest)_
 
 ## DB
 - [[wiki/db/innodb-locking|InnoDB-락-유형]] — S/X·인텐션·레코드·갭·넥스트키·인서트인텐션·AUTO-INC 락 총정리
@@ -35,7 +35,7 @@ _마지막 업데이트: 2026-05-14 (REPEATABLE READ 잠금 읽기 팬텀 리드
 <!-- 페이지 추가 시 여기에 기록 -->
 
 ## Distributed
-<!-- 페이지 추가 시 여기에 기록 -->
+- [[wiki/distributed/redis-distributed-lock|Redis-분산-락]] — Redlock 알고리즘: N개 독립 Redis Master 과반수 획득, 단일 인스턴스 한계와 크래시 복구
 
 ## Patterns
 <!-- 페이지 추가 시 여기에 기록 -->
@@ -53,3 +53,4 @@ _마지막 업데이트: 2026-05-14 (REPEATABLE READ 잠금 읽기 팬텀 리드
 - [[wiki/sources/kafka-chapter-8-exactly-once|kafka-chapter-8]] — [Chapter 8] 정확히 한 번 의미 구조 (멱등적 프로듀서, 트랜잭션, EOS)
 - [[wiki/sources/innodb-locking|innodb-locking]] — MySQL 8.4 InnoDB Locking 공식 레퍼런스
 - [[wiki/sources/innodb-transaction-isolation-levels|innodb-isolation-levels]] — MySQL 8.4 InnoDB Transaction Isolation Levels 공식 레퍼런스
+- [[wiki/sources/distributed-locks-with-redis|distributed-locks-with-redis]] — Redis 공식 분산 락 패턴 (Redlock 알고리즘)
